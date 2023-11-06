@@ -8,3 +8,23 @@ ul, li{
   list-style-type: none;
   display: inline-block;
 }
+
+.container{
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-between{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-4{
+  flex-basis: calc((100% / 12) * 4);
+}
+

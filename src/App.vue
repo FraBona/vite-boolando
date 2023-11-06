@@ -1,9 +1,11 @@
 <script >
   import PageHeader from './components/PageHeader.vue';
+  import PageMain from './components/PageMain.vue'; 
 
   export default{
     components: {
-      Header: PageHeader
+      Header: PageHeader,
+      Main: PageMain,
     },
     data(){
       return{
@@ -15,6 +17,7 @@
 
 <template>
   <Header></Header>
+  <Main></Main>
 </template>
 
 <style lang="scss">
