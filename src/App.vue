@@ -2,17 +2,20 @@
   import PageHeader from './components/PageHeader.vue';
   import PageFooter from './components/PageFooter.vue'; 
   import Card from './components/Card.vue'; 
-
+  import db from './db.json'
   export default{
     components: {
-      Header: PageHeader,
+      Header: PageHeader, 
       Footer: PageFooter,
       Card: Card,
     },
     data(){
       return{
-
+        products : db.products,
       }
+    },
+    mounted() {
+      console.log(this.products);
     }
   }
 </script>
@@ -23,9 +26,7 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col-4" v-for="(card ) in 6">
-            <Card></Card>
-          </div>
+          <Card v-for="product in products" :item="product"></Card>
         </div>
       </div>
     </div>

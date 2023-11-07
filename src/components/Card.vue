@@ -1,20 +1,38 @@
 <script>
+  export default{
+    props: {
+      item: Object,
+    },
+    data() {
+      return {
+       
+      }
+    },
+    mounted() {
+    }
+  }
 </script>
 
 <template>
-  <div class="card">
-  <figure class="card__image">
-    <img src="../img/img/1.webp" alt="" class="img-person">
-    <img src="../img/img/1b.webp" alt="" class="top-img">
-    <span class="heart-icon">&hearts;</span>
-    <span class="discount">-50%</span>
-    <span class="green-rectangle">sostenibilita</span>
-  </figure>
-  <div>
-    <p class="marca">levis</p>
-    <h5>RELAXED FIT TEE UNISEX</h5>
-    <span class="prezzo">14,99 &euro;</span>
-    <span class="line-through">29,99 &euro;</span>
+  <div class="col-4">
+    <div class="card">
+      <figure class="card__image">
+        <img :src="'/img/img/'+item.frontImage" alt="" class="img-person">
+        <img :src="'/img/img/'+item.backImage" alt="" class="top-img">
+        <span class="heart-icon">&hearts;</span>
+        <span class="discount" v-for="tipo in item.badges" :class="{
+          'active' : tipo.type === 'discount'
+        }">{{ tipo.value }}</span>
+        <span class="green-rectangle" v-for="tipo in item.badges" :class="{
+          'active' : tipo.type === 'tag'
+        }">{{ tipo.value }}</span>
+      </figure>
+      <div>
+      <p class="marca">{{ item.brand }}</p>
+      <h5>{{ item.name }}</h5>
+      <span class="prezzo">{{ item.price }} &euro;</span>
+      <span class="line-through">{{ item.price }} &euro;</span>
+      </div>
     </div>
   </div>
 </template>
@@ -61,6 +79,7 @@
     padding: 3px;
     position: absolute;
     bottom: 35px;
+    display: none;
   }
 
   .green-rectangle{
@@ -73,6 +92,7 @@
     position: absolute;
     bottom: 35px;
     left: 55px;
+    display: none;
   }
 
   .top-img{
@@ -98,5 +118,9 @@
 
   .marca{
     color: grey;
+  }
+
+  .active{
+    display: block;
   }
 </style>
