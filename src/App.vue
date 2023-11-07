@@ -1,13 +1,13 @@
 <script >
   import PageHeader from './components/PageHeader.vue';
-  import PageMain from './components/PageMain.vue'; 
   import PageFooter from './components/PageFooter.vue'; 
+  import Card from './components/Card.vue'; 
 
   export default{
     components: {
       Header: PageHeader,
-      Main: PageMain,
-      Footer: PageFooter
+      Footer: PageFooter,
+      Card: Card,
     },
     data(){
       return{
@@ -19,7 +19,17 @@
 
 <template>
   <Header></Header>
-  <Main></Main>
+  <main>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-4" v-for="(card ) in 6">
+            <Card></Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   <Footer></Footer>
 </template>
 
