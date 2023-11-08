@@ -14,12 +14,12 @@
           </ul>
         </div>
         <div class="col">
-          <img src="../img/img/boolean-logo.png" alt="" class="logo">
+          <img src="/img/img/boolean-logo.png" alt="" class="logo">
         </div>
         <div class="col">
-          <img src="../img/img/login.png" alt="" class="icon-header">
-          <img src="../img/img/heart.png" alt="" class="icon-header">
-          <img src="../img/img/shop.png" alt="" class="icon-header">
+          <img src="/img/img/login.png" alt="" class="icon-header">
+          <img src="/img/img/heart.png" alt="" class="icon-header">
+          <img src="/img/img/shop.png" alt="" class="icon-header">
         </div>
       </div>
     </div>

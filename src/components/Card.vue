@@ -1,14 +1,14 @@
 <script>
+
   export default{
     props: {
       item: Object,
     },
     data() {
-      return {
-       
-      }
+      return {};
     },
     mounted() {
+
     }
   }
 </script>

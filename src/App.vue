@@ -2,7 +2,8 @@
   import PageHeader from './components/PageHeader.vue';
   import PageFooter from './components/PageFooter.vue'; 
   import Card from './components/Card.vue'; 
-  import db from './db.json'
+  //import db from '../db.json';
+  import { store } from './store'
   export default{
     components: {
       Header: PageHeader, 
@@ -11,11 +12,11 @@
     },
     data(){
       return{
-        products : db.products,
+        store: store,
       }
     },
     mounted() {
-      console.log(this.products);
+      console.log(this.store);
     }
   }
 </script>
@@ -26,7 +27,7 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <Card v-for="product in products" :item="product"></Card>
+          <Card v-for="product in store.products" :item="product"></Card>
         </div>
       </div>
     </div>
