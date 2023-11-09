@@ -9,6 +9,12 @@
         //store: store,
       };
     },
+    methods: {
+      onClick(){
+        //console.log(this.item.brand)
+        this.$emit('show', this.item);
+      }
+    },
     mounted() {
       console.log(this.store);
     }
@@ -30,7 +36,7 @@
         }">{{ tipo.value }}</span>
       </figure>
       <div>
-      <p class="marca">{{ item.brand }}</p>
+      <p class="marca" @click="$emit('show',item)">{{ item.brand }}</p>
       <h5>{{ item.name }}</h5>
       <span class="prezzo">{{ item.price }} &euro;</span>
       <span class="line-through">{{ item.price }} &euro;</span>
