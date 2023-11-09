@@ -1,14 +1,16 @@
 <script>
-
+  import { store } from '../store'
   export default{
     props: {
       item: Object,
     },
     data() {
-      return {};
+      return {
+        store: store,
+      };
     },
     mounted() {
-
+      console.log(this.store);
     }
   }
 </script>

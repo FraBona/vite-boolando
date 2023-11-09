@@ -3,8 +3,8 @@
   import PageFooter from './components/PageFooter.vue'; 
   import Card from './components/Card.vue'; 
   //import db from '../db.json';
-  import { store } from './store';
   import axios from 'axios';
+  import { store } from './store';
   export default{
     components: {
       Header: PageHeader, 
@@ -22,7 +22,9 @@
     created(){
       axios.get('http://localhost:3000/products')
       .then(res =>{
-        console.log(res.data);
+        const cardStore = res.data;
+        this.store.cardStore = cardStore
+        console.log(cardStore);
       })
     }
   }
@@ -34,7 +36,7 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <Card v-for="product in store.products" :item="product"></Card>
+          <Card v-for="product in store.cardStore" :item="product"></Card>
         </div>
       </div>
     </div>
