@@ -1,12 +1,12 @@
 <script>
-  import { store } from '../store'
+  //import { store } from '../store'
   export default{
     props: {
       item: Object,
     },
     data() {
       return {
-        store: store,
+        //store: store,
       };
     },
     mounted() {
